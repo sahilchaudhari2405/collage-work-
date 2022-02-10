@@ -34,9 +34,29 @@ void show(Node *root)
 	{
 		return;
 	}
-	show(root->left);
 	cout << root->data << " ";
+	show(root->left);
 	show(root->right);
+}
+void show1(Node *root)
+{
+	if (root == NULL)
+	{
+		return;
+	}
+
+	show1(root->left);
+	cout << root->data << " ";
+	show1(root->right);
+}
+void show2(Node *root)
+{
+	if (root == NULL)
+	{
+		return;
+	}
+	show2(root->left);
+	show2(root->right);
 	cout << root->data << " ";
 }
 int main()
@@ -47,8 +67,14 @@ int main()
 	inserted(root, 3);
 	inserted(root, 4);
 	inserted(root, 2);
-	inserted(root, 7);
+	cout << "pre order" << endl;
 	show(root);
+	cout<<"\n";
+	cout << "in order" << endl;
+	show1(root);
+		cout<<"\n";
+	cout << "post order" << endl;
+	show2(root);
 	cout << endl;
 
 	return 0;

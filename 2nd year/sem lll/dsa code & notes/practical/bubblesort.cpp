@@ -3,9 +3,10 @@
 using namespace std;
 void swap(int *a, int *b)
 {
-    *a = *a^*b;
-    *b = *a^*b;
-    *a = *a^*b;
+  int temp=*a;
+  *a=*b;
+  *b=temp;
+
 }
 
 // A function to implement bubble sort
@@ -19,6 +20,7 @@ void bubbleSort(int arr[], int n)
                 swap(&arr[j], &arr[j + 1]);
             
     cout << "sort array print" << endl;
+    // for loop used for print sorted array
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
     cout << endl;
@@ -35,4 +37,3 @@ int main()
     return 0;
 }
 
-// This code is contributed by rathbhupendra

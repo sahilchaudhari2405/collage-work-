@@ -5,7 +5,7 @@
 int Top=-1, stack[Size];
 void Push();
 void Pop();
-void show();
+void print();
   
 int main()
 {
@@ -24,10 +24,11 @@ int main()
                     break;
             case 2: Pop();
                     break;
-            case 3: show();
+            case 3: print();
                     break;
             case 4: exit(0);
-             
+             break;
+        
             default: printf("\nInvalid number!!");
         }
     }
@@ -63,7 +64,7 @@ void Pop()
     }
 }
   
-void show()
+void print()
 {
      
      
