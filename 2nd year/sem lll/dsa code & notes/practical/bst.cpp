@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
-struct Node
+struct node
 {
 	int data;
-	Node *left;
-	Node *right;
-	Node(int val)
+	node *left;
+	node *right;
+	node(int val)
 	{
 		data = val;
 		left = NULL;
 		right = NULL;
 	}
 };
-Node *inserted(Node *root, int val)
+node *inserted(node *root, int val)
 {
 	if (root == NULL)
 	{
-		return new Node(val);
+		return new node(val);
 	}
 	if (val < root->data)
 	{
@@ -28,7 +28,7 @@ Node *inserted(Node *root, int val)
 	}
 	return root;
 }
-void show(Node *root)
+void show(node *root)
 {
 	if (root == NULL)
 	{
@@ -38,7 +38,7 @@ void show(Node *root)
 	show(root->left);
 	show(root->right);
 }
-void show1(Node *root)
+void show1(node *root)
 {
 	if (root == NULL)
 	{
@@ -49,7 +49,7 @@ void show1(Node *root)
 	cout << root->data << " ";
 	show1(root->right);
 }
-void show2(Node *root)
+void show2(node *root)
 {
 	if (root == NULL)
 	{
@@ -61,7 +61,7 @@ void show2(Node *root)
 }
 int main()
 {
-	Node *root = NULL;
+	node *root = NULL;
 	root = inserted(root, 5);
 	inserted(root, 1);
 	inserted(root, 3);
